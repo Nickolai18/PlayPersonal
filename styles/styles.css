@@ -1,0 +1,22 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+section{
+  background-color: antiquewhite;
+}
+nav{
+  display: flex;
+}
+/*MENU*/
+.box-menu{
+  width: 80%;
+}
+.box-image-logo{
+  height: 100px;
+}
+.box-navigation{
+  width: 300px;
+  background-color: aquamarine;
+}
