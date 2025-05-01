@@ -3,15 +3,26 @@
   padding: 0;
   box-sizing: border-box;
 }
+:root{
+  --backColor: rgb(231, 231, 231);
+  --bRadius: 10px;
+}
 body{
 }
 section{
-  background-color: antiquewhite;
 }
 nav{
   display: flex;
 }
 /*MENU*/
+.section-menu{
+  background-color: var(--backColor);
+  box-shadow: 0px 6px 0px;
+  border-bottom-left-radius: var(--bRadius);
+  border-bottom-right-radius: var(--bRadius);
+  position: fixed;
+  z-index: 100;
+}
 .box-menu{
   width: 80%;
 }
@@ -20,16 +31,36 @@ nav{
 }
 .box-navigation{
   width: 300px;
-  background-color: aquamarine;
 }
+.img-acc{
+  width: 38px;
+  padding: 4px!important;
+}
+/*LOGIN*/
+.box-login{
+  top: -350px;
+  /* left: 0; */
+  right: 110px;
+  position: absolute;
+  width: 400px;
+  height: 350px;
+  background-color: white;
+  border-bottom-left-radius: var(--bRadius);
+  border-bottom-right-radius: var(--bRadius);
+  transition: 0.4s;
+}
+.btn-close-logo{
+  width: 50px;
+}
+
 /*Catalog*/
 .section-catalog{
-  background-color: rgb(231, 231, 231);
+  min-height: 87.8vh;
+  background-color: var(--backColor);
   padding-bottom: 50px;
   padding-top: 30px;
 }
 .box-card-catalog{
-  background-color: blanchedalmond;
 }
 .box-catalog{
   width: 80%;
@@ -38,12 +69,38 @@ nav{
   padding-top: 150px;
   height: 300px;
 }
+.card-catalog-user{
+  padding: 0px;
+}
 /*Footer*/
 .section-footer{
   height: 12.2vh;
-
+  background-color: var(--backColor);
+}
+.box-footer{
+  width: 80%;
+}
+.box-title-footer{
+}
+.box-image-footer{
 }
 .box-img{
   width: 50px;
   height: 50px;
+}
+/*BID*/
+.card-bid{
+  background-color: white;
+  border-radius: var(--bRadius);
+}
+.text-bid{
+  margin-bottom: 0;
+}
+/*ADDGAMES*/
+.box-addgames{
+  width: 50%;
+}
+/*ACCOUNT*/
+.box-img-description{
+  width: 300px;
 }
