@@ -3,6 +3,8 @@
   padding: 0;
   box-sizing: border-box;
 }
+body{
+}
 section{
   background-color: antiquewhite;
 }
@@ -19,4 +21,29 @@ nav{
 .box-navigation{
   width: 300px;
   background-color: aquamarine;
+}
+/*Catalog*/
+.section-catalog{
+  background-color: rgb(231, 231, 231);
+  padding-bottom: 50px;
+  padding-top: 30px;
+}
+.box-card-catalog{
+  background-color: blanchedalmond;
+}
+.box-catalog{
+  width: 80%;
+}
+.card-catalog{
+  padding-top: 150px;
+  height: 300px;
+}
+/*Footer*/
+.section-footer{
+  height: 12.2vh;
+
+}
+.box-img{
+  width: 50px;
+  height: 50px;
 }
