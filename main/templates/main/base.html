@@ -1,0 +1,95 @@
+
+{% load static %}
+
+
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Играй даже на микроволновке</title>
+    <link rel="stylesheet" href="{% static "./styles/styles.css" %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  </head>
+  <body>
+    <header>
+      <section class="section-menu container-fluid align-items-center continer">
+        <div class="box-menu continer-xxl row md-3 mx-auto justify-content-between align-items-center">
+          <div class="box-image-logo col-2">
+            <img src="https://i.pinimg.com/originals/46/52/d6/4652d663402dcf86d2740ce009799b07.png" alt="" class="col-10">
+          </div>
+          <div class="box-navigation col-3 row align-items-center">
+            <nav class="col justify-content-evenly">
+              <a class="sign-up btn btn-light">
+                Станица заявок
+              </a>
+              <a class="sign-up btn btn-link">
+                  Выйти
+              </a>
+              <a class="sign-up btn btn-link">
+                Зарегестрироваться
+              </a>
+              <a class="login btn btn-light">
+                Войти
+              </a>
+              <a class="btn btn-light img-acc">
+                <img class="img-fluid" src="{% static "./image/free-icon-user-1946429.png" %}" alt="Личный кабинет">
+              </a>
+            </nav>
+          </div>
+        </div>
+        <div class="box-login  p-4">
+          <form>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+          <div class="box-close-btn d-flex justify-content-center">
+            <div class="btn btn-close-logo">
+              <img src="{% static "./image/icons8-стрелка-вверх-50.png" %}" alt="" class="img-fluid">
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
+    {% block content %}
+
+    {% endblock  %}
+      <footer>
+        <div class="section-footer  d-flex align-items-center container-fluid">
+          <div class="box-footer row md-3 mx-auto justify-content-between">
+            <div class="col-1 box-title-footer">
+              <h1 class="title">
+                HR
+              </h1>
+            </div>
+            <div class="col-1 d-flex align-items-center justify-content-between box-image-footer">
+              <div class="box-img">
+                <a href="https://vk.com/rotar_kosandr" target="_blank" class="link">
+                  <img src="{% static "./image/vk_5968835.png" %}" alt="" class="img-fluid">
+                </a>
+              </div>
+              <div class="box-img">
+                <a href="https://github.com/Nickolai18" target="_blank" class="link">
+                  <img src="https://cdn-1.webcatalog.io/catalog/github/github-icon.png" alt="" class="img-fluid">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    <script src="{% static "./script/login.js" %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  </body>
+</html>
