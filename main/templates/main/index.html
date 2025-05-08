@@ -14,104 +14,20 @@
           </h1>
           <div class="w-100"></div>
           <div class="box-card-catalog row row-cols-md-4 g-3">
-            <div class="col">
-              <div class="card card-catalog" style="background-image: url(https://newcdn.igromania.ru/mnt/game_screenshots_gallery/a/7/8/7/2/676298/a856d3329c4f8f93_original.jpg);">
-                <div class="card-body">
-                  <h6 class="card-title text-white">
-                    Охеунная игра
-                  </h6>
-                  <p class="text-card text-white">
-                    Бля Буду
-                  </p>
+            {% for elem in bid %}
+              <div class="col">
+                <div class="card card-catalog" style="background-image: url(https://newcdn.igromania.ru/mnt/game_screenshots_gallery/a/7/8/7/2/676298/a856d3329c4f8f93_original.jpg);">
+                  <div class="card-body">
+                    <h6 class="card-title text-white">
+                      {{ elem.name }}
+                    </h6>
+                    <p class="text-card text-white">
+                      {{ elem.user }}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-            
-            <div class="col">
-              <div class="card card-catalog">
-                <div class="card-body">
-                  <h6 class="card-title">
-                    Охеунная игра
-                  </h6>
-                  <p class="text-card">
-                    Бля Буду
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card card-catalog">
-                <div class="card-body">
-                  <h6 class="card-title">
-                    Охеунная игра
-                  </h6>
-                  <p class="text-card">
-                    Бля Буду
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card card-catalog">
-                <div class="card-body">
-                  <h6 class="card-title">
-                    Охеунная игра
-                  </h6>
-                  <p class="text-card">
-                    Бля Буду
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card card-catalog">
-                <div class="card-body">
-                  <h6 class="card-title">
-                    Охеунная игра
-                  </h6>
-                  <p class="text-card">
-                    Бля Буду
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card card-catalog">
-                <div class="card-body">
-                  <h6 class="card-title">
-                    Охеунная игра
-                  </h6>
-                  <p class="text-card">
-                    Бля Буду
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card card-catalog">
-                <div class="card-body">
-                  <h6 class="card-title">
-                    Охеунная игра
-                  </h6>
-                  <p class="text-card">
-                    Бля Буду
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card card-catalog">
-                <div class="card-body">
-                  <h6 class="card-title">
-                    Охеунная игра
-                  </h6>
-                  <p class="text-card">
-                    Бля Буду
-                  </p>
-                </div>
-              </div>
-            </div>
-            
+            {% endfor %}
         </div>
       </section>
     </main>

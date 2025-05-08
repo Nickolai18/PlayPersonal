@@ -14,51 +14,24 @@
       </h1>
       <div class="w-100"></div>
       <div class="box-card-catalog row row-cols-md-12 g-3">
-        <div class="col-12 d-flex card-bid p-3 align-items-center justify-content-between">
-            <div class="box-text-bid d-flex align-items-center">
-                <p class="text-bid">
-                    Запрос на "" от 
-                </p>
+        
+        {% for elem in bid %}
+            <div class="col-12 d-flex card-bid p-3 align-items-center justify-content-between">
+                <div class="box-text-bid d-flex align-items-center">
+                    <p class="text-bid">
+                        Запрос на "{{ elem.name }}" от {{ elem.user }}
+                    </p>
+                </div>
+                <div class="box-btn-bid">
+                    <a href="" class="btn btn-success">
+                        Принять
+                    </a>
+                    <a href="" class="btn btn-danger">
+                        Отклонить
+                    </a>
+                </div>
             </div>
-            <div class="box-btn-bid">
-                <a href="" class="btn btn-success">
-                    Принять
-                </a>
-                <a href="" class="btn btn-danger">
-                    Отклонить
-                </a>
-            </div>
-        </div>
-        <div class="col-12 d-flex card-bid p-3 align-items-center justify-content-between">
-            <div class="box-text-bid d-flex align-items-center">
-                <p class="text-bid">
-                    Запрос на "" от 
-                </p>
-            </div>
-            <div class="box-btn-bid">
-                <a href="" class="btn btn-success">
-                    Принять
-                </a>
-                <a href="" class="btn btn-danger">
-                    Отклонить
-                </a>
-            </div>
-        </div>
-        <div class="col-12 d-flex card-bid p-3 align-items-center justify-content-between">
-            <div class="box-text-bid d-flex align-items-center">
-                <p class="text-bid">
-                    Запрос на "" от 
-                </p>
-            </div>
-            <div class="box-btn-bid">
-                <a href="" class="btn btn-success">
-                    Принять
-                </a>
-                <a href="" class="btn btn-danger">
-                    Отклонить
-                </a>
-            </div>
-        </div>
+        {% endfor %}
       </div>
     </div>
   </section>
