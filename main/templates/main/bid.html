@@ -4,35 +4,63 @@
 <main>
   <section class="section-catalog container-fluid align-items-center">
     <div class="box-catalog row md-3 mx-auto row-gap-3">
-      <div class="col-12 w-100"></div>
-      <div class="col-12 w-100"></div>
-      <div class="col-12 w-100"></div>
-      <div class="col-12 w-100"></div>
-      <div class="col-12 w-100"></div>
-      <h1 class="title col-1">
-        Заявки
-      </h1>
-      <div class="w-100"></div>
-      <div class="box-card-catalog row row-cols-md-12 g-3">
+      <!-- ... остальной шапка ... -->
+      
+      {% for elem in bid %}
+      <div class="col-12 d-flex card-bid p-3 align-items-center justify-content-between">
+        <div class="box-text-bid d-flex align-items-center">
+          <p class="text-bid">
+            Запрос на "{{ elem.name }}" от {{ elem.user }}
+            <span class="badge bg-secondary ms-2">{{ elem.status }}</span>
+            {% if elem.rating > 0 %}
+            <span class="badge bg-warning ms-2">★ {{ elem.rating }}/5</span>
+            {% endif %}
+          </p>
+        </div>
         
-        {% for elem in bid %}
-            <div class="col-12 d-flex card-bid p-3 align-items-center justify-content-between">
-                <div class="box-text-bid d-flex align-items-center">
-                    <p class="text-bid">
-                        Запрос на "{{ elem.name }}" от {{ elem.user }}
-                    </p>
-                </div>
-                <div class="box-btn-bid">
-                    <a href="" class="btn btn-success">
-                        Принять
-                    </a>
-                    <a href="" class="btn btn-danger">
-                        Отклонить
-                    </a>
-                </div>
+        <div class="box-btn-bid">
+          <form method="post" class="d-inline">
+            {% csrf_token %}
+            <input type="hidden" name="bid_id" value="{{ elem.id }}">
+            <button type="submit" name="action" value="approve" class="btn btn-success">Принять</button>
+          </form>
+          
+          <form method="post" class="d-inline">
+            {% csrf_token %}
+            <input type="hidden" name="bid_id" value="{{ elem.id }}">
+            <button type="submit" name="action" value="reject" class="btn btn-danger ms-2">Отклонить</button>
+          </form>
+          
+          <form method="post" class="d-inline ms-2">
+            {% csrf_token %}
+            <input type="hidden" name="bid_id" value="{{ elem.id }}">
+            <input type="number" name="rating" min="1" max="5" class="form-control d-inline" style="width: 60px;">
+            <button type="submit" name="action" value="rate" class="btn btn-info ms-2">Оценить</button>
+          </form>
+        </div>
+        
+        <div class="mt-3 w-100">
+          <h6 class="mt-3">Комментарии:</h6>
+          {% for comment in elem.comments.all %}
+          <div class="card mb-2">
+            <div class="card-body p-2">
+              <strong>{{ comment.user }}</strong>
+              <p class="mb-1">{{ comment.text }}</p>
+              <small class="text-muted">{{ comment.created_at }}</small>
             </div>
-        {% endfor %}
+          </div>
+          {% endfor %}
+          
+          <form method="post" class="mt-2">
+            {% csrf_token %}
+            <input type="hidden" name="bid_id" value="{{ elem.id }}">
+            <input type="text" name="user" placeholder="Ваше имя" class="form-control mb-2">
+            <textarea name="comment_text" class="form-control mb-2" rows="2" placeholder="Ваш комментарий"></textarea>
+            <button type="submit" class="btn btn-sm btn-primary">Отправить</button>
+          </form>
+        </div>
       </div>
+      {% endfor %}
     </div>
   </section>
 </main>
