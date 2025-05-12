@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 :root{
-  --backColor: rgb(231, 231, 231);
+  --backColor: rgb(29, 39, 179);
   --bRadius: 10px;
 }
 body{
@@ -103,4 +103,16 @@ nav{
 /*ACCOUNT*/
 .box-img-description{
   width: 300px;
+}
+.card-catalog-user-control{
+  position: relative;
+}
+.card-catalog-user-control::after{
+  content: '';
+  top: 0;
+  right: 0;
+  width: 25px;
+  height: 25px;
+  background-color: aqua;
+  position: absolute;
 }

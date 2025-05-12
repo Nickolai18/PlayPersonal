@@ -22,4 +22,6 @@ def bid(request):
   }
 
   return render(request, 'main/bid.html', context)
+def users(request):
+  return render(request, 'main/users-control.html')
 # Create your views here.
