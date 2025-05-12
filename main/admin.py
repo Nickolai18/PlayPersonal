@@ -1,6 +1,11 @@
 from django.contrib import admin
+from .models import Bid, Comment
 
-from main.models import Bid
+@admin.register(Bid)
+class BidAdmin(admin.ModelAdmin):
+    list_display = ('id', 'name', 'user', 'status', 'rating')
+    list_editable = ('status', 'rating')
 
-admin.site.register(Bid)
-# Register your models here.
+@admin.register(Comment)
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ('id', 'bid', 'user', 'created_at')
