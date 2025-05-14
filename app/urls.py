@@ -16,11 +16,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
+from app.settings import DEBUG
 
 from main import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.main, name='main'),
-    path('bid/', views.bid, name='bid')
+    path('bid/', views.bid, name='bid'),
+    path('product/<int:product_id>', views.product, name='product'),
 ]
+
+if DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

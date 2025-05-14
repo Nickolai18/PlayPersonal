@@ -1,0 +1,41 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block content %}
+    
+    <main>
+      <section class="section-catalog container-fluid align-items-center">
+        
+          <div class="box-catalog row md-3 mx-auto row-gap-3">
+            <div class="col-12 w-100"></div>
+            <div class="col-12 w-100"></div>
+            <div class="col-12 w-100"></div>
+            <div class="col-12 w-100"></div>
+            <div class="col-12 w-100"></div>
+            <div class="col-9 w-90 d-flex justify-content-between">
+              <h1 class="title col-5">
+                {{ game.name }}
+              </h1>
+              <div class="col-1 d-flex align-items-center ">
+                <a href="{{ game.link }}" class="btn btn-primary mx-auto">Скачать</a>
+              </div>
+            </div>
+            <div class="box-card-catalog row row-cols g-3">
+              <div class="col-9">
+                <img src="{{ game.image.url }}" alt="" class="image-fluid">
+              </div>
+              <div class="col-9">
+                <p class="text">
+                  {{ game.description }}
+                </p>
+              </div>
+              <div class="form-floating w-50">
+                <textarea class="form-control mb-1" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                <label for="floatingTextarea2">Комментарий</label>
+                <button class="btn btn-light">Отправить</button>
+              </div>
+            </div>
+          </div>
+      </section>
+    </main>
+    
+{% endblock content %}

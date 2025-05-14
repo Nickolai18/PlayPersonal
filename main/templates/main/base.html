@@ -33,7 +33,7 @@
                 Войти
               </a>
               <a class="btn btn-light img-acc">
-                <img class="img-fluid" src="{% static "./image/free-icon-user-1946429.png" %}" alt="Личный кабинет">
+                <img class="img-fluid" src="{% static "image/free-icon-user-1946429.png" %}" alt="Личный кабинет">
               </a>
             </nav>
           </div>
@@ -58,6 +58,29 @@
           <div class="box-close-btn d-flex justify-content-center">
             <div class="btn btn-close-logo">
               <img src="{% static "./image/icons8-стрелка-вверх-50.png" %}" alt="" class="img-fluid">
+            </div>
+          </div>
+        </div>
+        <div class="box-login box-sign p-4">
+          <form>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Email address</label>
+              <input type="email" class="form-control" aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text"></div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Пароль</label>
+              <input type="password" class="form-control">
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input">
+              <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+          </form>
+          <div class="box-close-btn d-flex justify-content-center">
+            <div class="btn btn-close-logo ">
+              <img src="./image/icons8-стрелка-вверх-50.png" alt="" class="img-fluid">
             </div>
           </div>
         </div>
