@@ -15,17 +15,19 @@
           <div class="w-100"></div>
           <div class="box-card-catalog row row-cols-md-4 g-3">
             {% for elem in card %}
-              <a href="{% url "product" elem.id %}">
-                <div class="col">
-                  <div class="card card-catalog" style="background-image: url({{ elem.image.url }});">
-                    <div class="card-body">
-                      <h6 class="card-title text-white">
-                        {{ elem.name }}
-                      </h6>
+              {% if elem.isActive %}
+                <a href="{% url "product" elem.id %}">
+                  <div class="col">
+                    <div class="card card-catalog" style="background-image: url({{ elem.image.url }});">
+                      <div class="card-body">
+                        <h6 class="card-title text-white">
+                          {{ elem.name }}
+                        </h6>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </a>
+                </a>
+              {% endif %}
             {% endfor %}
         </div>
       </section>

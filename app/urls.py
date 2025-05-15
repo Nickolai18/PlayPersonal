@@ -19,6 +19,7 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 from app.settings import DEBUG
+from django.contrib.auth import views
 
 from main import views
 
@@ -27,6 +28,9 @@ urlpatterns = [
     path('', views.main, name='main'),
     path('bid/', views.bid, name='bid'),
     path('product/<int:product_id>', views.product, name='product'),
+    path('logout/', views.logout, name='logout'),
+    path('addgames/', views.addgames, name='addgames'),
+
 ]
 
 if DEBUG:

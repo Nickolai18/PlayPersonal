@@ -15,19 +15,31 @@
         Ваша игра
       </h1>
       <div class="box-card-catalog row row-cols-md-12 g-3">
-        <form>
+        <form action="{% url "addgames" %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
             <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Название игры</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <label for="id_name" class="form-label">Имя разработчика</label>
+              <input name="username" type="text" class="form-control" id="id_name" aria-describedby="emailHelp"
+                     value="{{user.username}}">
               <div id="emailHelp" class="form-text">Просьба писать без опечаток)</div>
             </div> 
             <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">Описание игры</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+              <label for="id_name" class="form-label">Название игры</label>
+              <input name="name" type="text" class="form-control" id="id_name" aria-describedby="emailHelp"
+                     value="{% if game.name.value %}{{game.name.value}}{% endif %}">
+              <div id="emailHelp" class="form-text">Просьба писать без опечаток)</div>
+            </div> 
+            <div class="mb-3">
+                <label for="id_description" class="form-label">Описание игры</label>
+                <textarea name="description" class="form-control" id="id_description" rows="3" value="{% if game.description.value %}{{game.description.value}}{% endif %}"></textarea>
             </div>
             <div class="mb-3">
-                <label for="formFile" class="form-label">Добавьте скриншот из игры</label>
-                <input class="form-control" type="file" id="formFile">
+                <label for="id_description" class="form-label">Ссылка на скачивание</label>
+                <input name="link" class="form-control" id="id_description" rows="3" value="{% if game.description.value %}{{game.description.value}}{% endif %}">
+            </div>
+            <div class="mb-3">
+                <label for="id_image" class="form-label">Добавьте скриншот из игры</label>
+                <input name="image" class="form-control" type="file" id="id_image" value="{% if game.image.value %}{{game.image.value}}{% endif %}">
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>

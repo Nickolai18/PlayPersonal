@@ -52,6 +52,10 @@ nav{
 .btn-close-logo{
   width: 50px;
 }
+.box-sign{
+  height: 450px;
+  top: -450px;
+}
 
 /*Catalog*/
 .section-catalog{

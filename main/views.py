@@ -1,12 +1,12 @@
 from django.http import HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.contrib import auth
 from django.urls import reverse
 
 from main.models import Bid
 from main.models import Games
 
-from main.forms import UserLoginForm
+from main.forms import AddGames, UserLoginForm, UserRegistrationForm
 
 
 def main(request):
@@ -22,14 +22,27 @@ def main(request):
   else:
     form = UserLoginForm()
 
+  if request.method == 'POST':
+    formS = UserRegistrationForm(data=request.POST)
+    if formS.is_valid():
+      formS.save()
+      return HttpResponseRedirect(reverse('main'))
+  else:
+    formS = UserRegistrationForm()
+
   card = Games.objects.all()
 
   content = {
     "card": card,
-    "form": form
+    "form": form,
+    "formS": formS
   }
 
   return render(request, 'main/index.html', content)
+
+def logout(request):
+  auth.logout(request)
+  return redirect(reverse('main'))
 
 def bid(request):
 
@@ -52,5 +65,19 @@ def product(request, product_id):
 
   return render(request, 'main/product.html', context)
   
+def addgames(request):
 
+  if request.method == 'POST':
+    game = AddGames(data=request.POST, files=request.FILES)
+    if game.is_valid():
+      game.save()
+      return HttpResponseRedirect(reverse('main'))
+  else:
+    game = UserRegistrationForm()
+
+  context = {
+    "game": game,
+  }
+
+  return render(request, 'main/addgames.html', context)
 # Create your views here.
