@@ -7,12 +7,12 @@ btnOpen.addEventListener('click', function(){
 btnClose.addEventListener('click', function(){
     boxLogin.style.top = '-350px'
 })
-let btnOpenSign = document.querySelector('.sign-up')
-let boxSign = document.querySelector('.box-sign')
-let btnCloseSign = document.querySelector('.box-close-btn')
-btnOpenSign.addEventListener('click', function(){
-    boxSign.style.top = '0px'
-})
-btnCloseSign.addEventListener('click', function(){
-    boxSign.style.top = '-350px'
-})
+// let btnOpenSign = document.querySelector('.sign-up')
+// let boxSign = document.querySelector('.box-sign')
+// let btnCloseSign = document.querySelector('.box-close-btn')
+// btnOpenSign.addEventListener('click', function(){
+//     boxSign.style.top = '0px'
+// })
+// btnCloseSign.addEventListener('click', function(){
+//     boxSign.style.top = '-350px'
+// })
