@@ -9,6 +9,7 @@ class Games(models.Model):
     link = models.URLField(max_length=100)
     image = models.ImageField()
     isActive = models.BooleanField(default=False)
+    
 
 
     class Meta:
